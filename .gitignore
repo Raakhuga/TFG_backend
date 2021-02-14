@@ -1,4 +1,8 @@
- __pycache__/*
- *.pyc
+__pycache__/
+*.py[cod]
+*$py.class
 
- test_*
+test_client.py
+test_server.py
+
+test/*

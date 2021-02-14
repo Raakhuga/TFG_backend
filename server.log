@@ -1,0 +1,211 @@
+INFO:root:('::1', 61986, 0, 0) connects.
+INFO:root:('::1', 61986, 0, 0) disconnects.
+ERROR:websockets.server:Error in connection handler
+Traceback (most recent call last):
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 457, in finish_recv
+    return ov.getresult()
+OSError: [WinError 64] The specified network name is no longer available
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 1047, in read_frame
+    frame = await Frame.read(
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\framing.py", line 105, in read
+    data = await reader(2)
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\asyncio\streams.py", line 723, in readexactly
+    await self._wait_for_data('readexactly')
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\asyncio\streams.py", line 517, in _wait_for_data
+    await self._waiter
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\asyncio\proactor_events.py", line 280, in _loop_reading
+    data = fut.result()
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 812, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 461, in finish_recv
+    raise ConnectionResetError(*exc.args)
+ConnectionResetError: [WinError 64] The specified network name is no longer available
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\server.py", line 191, in handler
+    await self.ws_handler(self, path)
+  File "C:\Users\Raakhuga\Documents\git\TFG_backend\API\API.py", line 48, in ws_handler
+    await self.distribute(ws)
+  File "C:\Users\Raakhuga\Documents\git\TFG_backend\API\API.py", line 42, in distribute
+    async for message in ws:
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 439, in __aiter__
+    yield await self.recv()
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 509, in recv
+    await self.ensure_open()
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 803, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+INFO:root:Value: 1.000000
+INFO:root:Value: 2.000000
+INFO:root:Value: 3.000000
+INFO:root:Value: 4.000000
+INFO:root:Value: 5.000000
+INFO:root:Value: 6.000000
+INFO:root:Value: 7.000000
+INFO:root:Value: 8.000000
+INFO:root:Value: 9.000000
+INFO:root:Value: 10.000000
+INFO:root:Value: 11.000000
+INFO:root:Value: 12.000000
+INFO:root:Value: 13.000000
+INFO:root:Value: 14.000000
+INFO:root:Value: 15.000000
+INFO:root:Value: 16.000000
+INFO:root:Value: 17.000000
+INFO:root:Value: 18.000000
+INFO:root:Value: 19.000000
+INFO:root:Value: 20.000000
+INFO:root:Value: 21.000000
+INFO:root:Value: 22.000000
+INFO:root:Value: 23.000000
+INFO:root:Value: 24.000000
+INFO:root:Value: 25.000000
+INFO:root:Value: 26.000000
+INFO:root:Value: 27.000000
+INFO:root:Value: 28.000000
+INFO:root:Value: 29.000000
+INFO:root:Value: 30.000000
+INFO:root:('::1', 62064, 0, 0) connects.
+INFO:root:('::1', 62064, 0, 0) disconnects.
+ERROR:websockets.server:Error in connection handler
+Traceback (most recent call last):
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 457, in finish_recv
+    return ov.getresult()
+OSError: [WinError 64] The specified network name is no longer available
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 1047, in read_frame
+    frame = await Frame.read(
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\framing.py", line 105, in read
+    data = await reader(2)
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\asyncio\streams.py", line 723, in readexactly
+    await self._wait_for_data('readexactly')
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\asyncio\streams.py", line 517, in _wait_for_data
+    await self._waiter
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\asyncio\proactor_events.py", line 280, in _loop_reading
+    data = fut.result()
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 812, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 461, in finish_recv
+    raise ConnectionResetError(*exc.args)
+ConnectionResetError: [WinError 64] The specified network name is no longer available
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\server.py", line 191, in handler
+    await self.ws_handler(self, path)
+  File "C:\Users\Raakhuga\Documents\git\TFG_backend\API\API.py", line 48, in ws_handler
+    await self.distribute(ws)
+  File "C:\Users\Raakhuga\Documents\git\TFG_backend\API\API.py", line 42, in distribute
+    async for message in ws:
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 439, in __aiter__
+    yield await self.recv()
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 509, in recv
+    await self.ensure_open()
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 803, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+INFO:root:('::1', 62103, 0, 0) connects.
+INFO:root:('::1', 62103, 0, 0) disconnects.
+ERROR:websockets.server:Error in connection handler
+Traceback (most recent call last):
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 457, in finish_recv
+    return ov.getresult()
+OSError: [WinError 64] The specified network name is no longer available
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 1047, in read_frame
+    frame = await Frame.read(
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\framing.py", line 105, in read
+    data = await reader(2)
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\asyncio\streams.py", line 723, in readexactly
+    await self._wait_for_data('readexactly')
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\asyncio\streams.py", line 517, in _wait_for_data
+    await self._waiter
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\asyncio\proactor_events.py", line 280, in _loop_reading
+    data = fut.result()
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 812, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 461, in finish_recv
+    raise ConnectionResetError(*exc.args)
+ConnectionResetError: [WinError 64] The specified network name is no longer available
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\server.py", line 191, in handler
+    await self.ws_handler(self, path)
+  File "C:\Users\Raakhuga\Documents\git\TFG_backend\API\API.py", line 48, in ws_handler
+    await self.distribute(ws)
+  File "C:\Users\Raakhuga\Documents\git\TFG_backend\API\API.py", line 42, in distribute
+    async for message in ws:
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 439, in __aiter__
+    yield await self.recv()
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 509, in recv
+    await self.ensure_open()
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 803, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+INFO:root:('::1', 62175, 0, 0) connects.
+INFO:root:('::1', 62175, 0, 0) disconnects.
+ERROR:websockets.server:Error in connection handler
+Traceback (most recent call last):
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 827, in transfer_data
+    message = await self.read_message()
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 1047, in read_frame
+    frame = await Frame.read(
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\framing.py", line 105, in read
+    data = await reader(2)
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\asyncio\streams.py", line 721, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\server.py", line 191, in handler
+    await self.ws_handler(self, path)
+  File "C:\Users\Raakhuga\Documents\git\TFG_backend\API\API.py", line 50, in ws_handler
+    await self.distribute(ws)
+  File "C:\Users\Raakhuga\Documents\git\TFG_backend\API\API.py", line 44, in distribute
+    async for message in ws:
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 439, in __aiter__
+    yield await self.recv()
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 509, in recv
+    await self.ensure_open()
+  File "C:\Users\Raakhuga\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\protocol.py", line 803, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason

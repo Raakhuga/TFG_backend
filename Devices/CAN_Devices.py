@@ -1,3 +1,4 @@
+
 class CAN_devices:
     
     def read(self):
@@ -20,9 +21,10 @@ class CAN_device(CAN_devices):
     _id = None
     _can_devices = None
 
-    def __init__(self, can_devices, id):
+    def __init__(self, can_devices, id, variable):
         self._can_devices = can_devices
         self._id = id
+        self._variable = variable 
 
     def can_devices(self):
         return self._can_devices
@@ -54,7 +56,9 @@ class CAN_device(CAN_devices):
 
 class CAN_speed(CAN_device):
     def get_data(self, data_frame):
-        return 'speed', data_frame['data']
+        value = data_frame['data']
+        self._variable.value = value
+        return 'speed', value
 
     def write(self, data):
         pass
@@ -62,14 +66,18 @@ class CAN_speed(CAN_device):
 
 class CAN_rpm(CAN_device):
     def get_data(self, data_frame):
-        return 'rpm', data_frame['data']
+        value = data_frame['data']
+        self._variable.value = value
+        return 'rpm', value
 
     def write(self, data):
         pass
 
 class CAN_distance(CAN_device):
     def get_data(self, data_frame):
-        return 'distance', data_frame['data']
+        value = data_frame['data']
+        self._variable.value = value
+        return 'distance', value
 
     def write(self, data):
         pass

@@ -19,29 +19,32 @@ class Server:
         self._rpm.register_observer(self.send_rpm)
 
     def send_speed(self, value) -> None:
-        str_value = ''
+        str_value = '"'
         for byte in value:
-            if str_value != '':
+            if str_value != '"':
                 str_value += ','
             str_value += hex(byte)
+        str_value += '"'
         coro = self.send_to_clients("{ %sspeed%s: %s }"%('"','"', str_value))
         asyncio.run_coroutine_threadsafe(coro, self._loop)
 
     def send_distance(self, value) -> None:
-        str_value = ''
+        str_value = '"'
         for byte in value:
-            if str_value != '':
+            if str_value != '"':
                 str_value += ','
             str_value += hex(byte)
+        str_value += '"'
         coro = self.send_to_clients("{ %sdistance%s: %s }"%('"','"', str_value))
         asyncio.run_coroutine_threadsafe(coro, self._loop)
 
     def send_rpm(self, value) -> None:
-        str_value = ''
+        str_value = '"'
         for byte in value:
-            if str_value != '':
+            if str_value != '"':
                 str_value += ','
             str_value += hex(byte)
+        str_value += '"'
         coro = self.send_to_clients("{ %srpm%s: %s }"%('"','"', str_value))
         asyncio.run_coroutine_threadsafe(coro, self._loop)
 

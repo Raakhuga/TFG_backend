@@ -36,6 +36,7 @@ can = Default_CAN_device('vcan0')
 can = CAN_speed(can, hex(1), speed)
 can = CAN_rpm(can, hex(2), rpm)
 can = CAN_distance(can, hex(3), distance)
+read_can()
 
 '''
 while(1):

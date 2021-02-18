@@ -63,7 +63,7 @@ class CAN_device(CAN_devices):
         if data_frame['id'] == self.id():
             return self.get_data(data_frame)
         else:
-            self.can_devices.interprete_data_frame()
+            self.can_devices.interprete_data_frame(data_frame)
 
     def write(self, data):
         self.bus.Message(arbitration_id=self._id, data=data['data'], is_extended_id=data['isExtended'])

@@ -23,7 +23,7 @@ class Server:
         for byte in value:
             if str_value != '':
                 str_value += ','
-            str_value += ord(byte.decode())
+            str_value += hex(byte)
         coro = self.send_to_clients("{ %sspeed%s: %s }"%('"','"', str_value))
         asyncio.run_coroutine_threadsafe(coro, self._loop)
 
@@ -32,7 +32,7 @@ class Server:
         for byte in value:
             if str_value != '':
                 str_value += ','
-            str_value += ord(byte.decode())
+            str_value += hex(byte)
         coro = self.send_to_clients("{ %sdistance%s: %s }"%('"','"', str_value))
         asyncio.run_coroutine_threadsafe(coro, self._loop)
 
@@ -41,7 +41,7 @@ class Server:
         for byte in value:
             if str_value != '':
                 str_value += ','
-            str_value += ord(byte.decode())
+            str_value += hex(byte)
         coro = self.send_to_clients("{ %srpm%s: %s }"%('"','"', str_value))
         asyncio.run_coroutine_threadsafe(coro, self._loop)
 

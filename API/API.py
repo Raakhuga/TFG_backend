@@ -24,7 +24,7 @@ class Server:
             if str_value != '"':
                 str_value += ','
             str_value += hex(byte)
-        str_value += '"'
+        return str_value += '"'
 
     
     def send_speed(self, value) -> None:

@@ -1,0 +1,36 @@
+{
+    "interface": "vcan0",
+    "speed_id": "0x001",
+    "rpm_id": "0x002",
+    "distance_id": "0x003",
+    "serve_ip": "192.168.100.1",
+    "serve_port": 4000,
+    "car": {
+        "max_speed": 200,
+        "max_rpm": 5000,
+        "max_distance": 300
+    },
+    "dashboards": {
+        "default": "default",
+        "dashboards": {
+            "default": [
+                {
+                    "string": "speedViewer",
+                    "x_o": 2,
+                    "x_f": 11,
+                    "y_o": 0,
+                    "y_f": 7,
+                    "z_pos": 1
+                },
+                {
+                    "string": "rpmViewer",
+                    "x_o": 9,
+                    "x_f": 11,
+                    "y_o": 1,
+                    "y_f": 2,
+                    "z_pos": 2
+                }
+            ]
+        }
+    }
+}

@@ -1,5 +1,5 @@
 class ValueObserver:
-    def __init__(self, value: float):
+    def __init__(self, value):
         self._value = value
         self._observers = []
 

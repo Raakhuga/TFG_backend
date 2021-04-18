@@ -1,6 +1,7 @@
 import can
+from .Devices import Device, Devices
 
-class CAN_devices:
+class CAN_devices(Devices):
     
     def read(self):
         pass
@@ -78,9 +79,15 @@ class CAN_device(CAN_devices):
 
 
 class CAN_speed(CAN_device):
+    def __init__(self, can_devices, id, variable, max_speed):
+        super().__init__(can_devices, id, variable)
+        self._max_speed = max_speed
+
     def get_data(self, data_frame):
-        value = data_frame['data']
-        self._variable.value = value
+        value = data_frame['data'][0]
+        value = value * self._max_speed / 256
+        if value != self._variable.value:
+            self._variable.value = value
         return 'speed', value
 
     def write(self, data):
@@ -93,18 +100,55 @@ class CAN_speed(CAN_device):
 
 
 class CAN_rpm(CAN_device):
+    def __init__(self, can_devices, id, variable, max_rpm):
+        super().__init__(can_devices, id, variable)
+        self._max_rpm = max_rpm
+
     def get_data(self, data_frame):
-        value = data_frame['data']
-        self._variable.value = value
+        value = data_frame['data'][0]
+        value = value * self._max_rpm / 256
+        if value != self._variable.value:
+            self._variable.value = value
         return 'rpm', value
 
     def write(self, data):
         pass
 
-class CAN_distance(CAN_device):
+class CAN_engine(CAN_device):
+    def __init__(self, can_devices, id, speed_obs, rpm_obs, max_speed, max_rpm):
+        super().__init__(can_devices, id, None)
+        self._speed = speed_obs
+        self._rpm = rpm_obs
+        
+        self._max_speed = max_speed
+        self._max_rpm = max_rpm
+
     def get_data(self, data_frame):
-        value = data_frame['data']
-        self._variable.value = value
+        speed = data_frame['data'][0]
+        speed = speed * self._max_speed / 256
+
+        rpm = data_frame['data'][1]
+        rpm = rpm * self._max_rpm / 256
+
+        if speed != self._speed.value:
+            self._speed.value = speed
+        
+        if rpm != self._rpm.value:
+            self._rpm.value = rpm
+        
+        return 'speed', speed, 'rpm', rpm
+
+
+class CAN_distance(CAN_device):
+    def __init__(self, can_devices, id, variable, max_dist):
+        super().__init__(can_devices, id, variable)
+        self._max_dist = max_dist
+
+    def get_data(self, data_frame):
+        value = data_frame['data'][0]
+        value = value * self._max_dist / 256
+        if value != self._variable.value:
+            self._variable.value = value
         return 'distance', value
 
     def write(self, data):

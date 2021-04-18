@@ -1,0 +1,45 @@
+{
+    "interface": "can0",
+    "engine_id": "0x001",
+    "speed_id": "0x001",
+    "rpm_id": "0x002",
+    "distance_id": "0x003",
+    "serve_ip": "192.168.100.1",
+    "serve_port": 4000,
+    "car": {
+        "max_speed": 400,
+        "max_rpm": 5000,
+        "max_distance": 300
+    },
+    "dashboards": {
+        "default": "default",
+        "dashboards": {
+            "default": [
+                {
+                    "string": "distanceViewer",
+                    "x_o": 6,
+                    "x_f": 7,
+                    "y_o": 0,
+                    "y_f": 1,
+                    "z_pos": 0
+                },
+                {
+                    "string": "speedViewer",
+                    "x_o": 2,
+                    "x_f": 6,
+                    "y_o": 2,
+                    "y_f": 5,
+                    "z_pos": 1
+                },
+                {
+                    "string": "rpmViewer",
+                    "x_o": 7,
+                    "x_f": 11,
+                    "y_o": 2,
+                    "y_f": 5,
+                    "z_pos": 2
+                }
+            ]
+        }
+    }
+}

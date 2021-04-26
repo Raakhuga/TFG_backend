@@ -15,8 +15,7 @@ class Default_CAN_device(CAN_devices):
     def __init__(self, interface, bitRate=None):
         self._interface = interface
         self._bitRate = bitRate 
-        if self._bitRate != None:
-            
+        if self._bitRate != None:            
             self._bus = can.interface.Bus(bustype='socketcan', channel=self._interface, bitrate=bitRate)
         else:
             self._bus = can.interface.Bus(bustype='socketcan', channel=self._interface)
@@ -66,8 +65,8 @@ class CAN_device(CAN_devices):
         else:
             self.can_devices.interprete_data_frame(data_frame)
 
-    def write(self, data):
-        self.bus.Message(arbitration_id=self._id, data=data['data'], is_extended_id=data['isExtended'])
+    def write(self, data, is_extended_id = False):
+        self.bus.Message(arbitration_id=self._id, data=data, is_extended_id=is_extended_id)
 
     def read(self):
         data_frame = self.read_bus()
@@ -90,14 +89,6 @@ class CAN_speed(CAN_device):
             self._variable.value = value
         return 'speed', value
 
-    def write(self, data):
-        processed_data = {
-            'data': data,
-            'isExtended': False
-        }
-        super.write(processed_data)
-        pass
-
 
 class CAN_rpm(CAN_device):
     def __init__(self, can_devices, id, variable, max_rpm):
@@ -110,9 +101,6 @@ class CAN_rpm(CAN_device):
         if value != self._variable.value:
             self._variable.value = value
         return 'rpm', value
-
-    def write(self, data):
-        pass
 
 class CAN_engine(CAN_device):
     def __init__(self, can_devices, id, speed_obs, rpm_obs, max_speed, max_rpm):
@@ -150,6 +138,3 @@ class CAN_distance(CAN_device):
         if value != self._variable.value:
             self._variable.value = value
         return 'distance', value
-
-    def write(self, data):
-        pass

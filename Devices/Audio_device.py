@@ -44,12 +44,14 @@ class Audio(Device):
                 return (data, pyaudio.paContinue)
                 
         
-            stream = self._pyaudio.open(format=self._pyaudio.get_format_from_width(wf.getsampwidth()), 
-                                        channels=wf.getnchannels(), 
-                                        rate=wf.getframerate(), 
-                                        output=True, 
-                                        output_device_index=self._interface,
-                                        stream_callback=callback)
+            stream = self._pyaudio.open(
+                format=self._pyaudio.get_format_from_width(wf.getsampwidth()), 
+                channels=wf.getnchannels(), 
+                rate=wf.getframerate(), 
+                output=True, 
+                output_device_index=self._interface,
+                stream_callback=callback 
+                )
             stream.start_stream()
             while stream.is_active():
                 time.sleep(0.1)

@@ -7,7 +7,6 @@ from websockets import WebSocketServerProtocol
 logging.basicConfig(filename='server.log', level=logging.INFO)
 
 class Server:
-    
     def __init__(self, loop, speed, distance, rpm, tooClose, config_dict, config_file_path): 
         #Observers
         self._speed = speed
@@ -80,7 +79,7 @@ class Server:
                 "car": {
                     "max_speed": dictionary['configuration']['maxSpeed'],
                     "max_rpm": dictionary['configuration']['maxRpm'],
-                    "max_distance": 300
+                    "max_distance": self._config_dict['car']['max_distance']
                 }
             }
             return dashboards, car

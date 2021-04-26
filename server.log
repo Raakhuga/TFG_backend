@@ -5169,3 +5169,6 @@ INFO:can.interfaces.socketcan.socketcan:Created a socket
 INFO:root:('192.168.100.12', 65520) connects.
 INFO:root:('192.168.100.12', 65520) disconnects.
 INFO:root:('192.168.100.12', 65534) connects.
+INFO:root:('192.168.1.11', 63448) connects.
+INFO:root:('192.168.1.11', 63448) disconnects.
+INFO:root:('192.168.1.11', 59693) connects.
